@@ -22,7 +22,7 @@ import br.org.generation.blogpessoal.repository.UsuarioRepository;
 import br.org.generation.blogpessoal.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuarios)")
+@RequestMapping("/usuarios")
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 public class UsuarioController {
 	
@@ -32,12 +32,12 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@GetMapping
+	@GetMapping("/all")
 	public ResponseEntity<List<Usuario>>getAll(){
 		return ResponseEntity.ok(usuarioRepository.findAll());
 	}
 	
-	@GetMapping("/logar")
+	@PostMapping("/logar")
 	public ResponseEntity<UsuarioLogin>login(@RequestBody Optional<UsuarioLogin>user){
 		return usuarioService.autenticarUsuario(user)
 				.map(resp -> ResponseEntity.ok(resp))
