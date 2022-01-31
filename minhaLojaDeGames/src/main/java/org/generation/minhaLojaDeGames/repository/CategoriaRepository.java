@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 	
 	
-	public List<Categoria>findAllByDescricaoContainingIgnoreCase (String descricao);
+	public List<Categoria> findAllByDescricaoContainingIgnoreCase (String descricao);
 
 
 	

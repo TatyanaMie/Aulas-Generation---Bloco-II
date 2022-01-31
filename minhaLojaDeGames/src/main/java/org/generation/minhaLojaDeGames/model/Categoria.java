@@ -20,11 +20,11 @@ public class Categoria {
 
 	@Id
 	@GeneratedValue	(strategy = GenerationType.IDENTITY)
-	private long Id;
+	private long id;
 	
 	@NotBlank(message = "O atributo Tipo é Obrigatório e não pode utilizar espaços em branco!") 
 	@Size(min=2, max=1000, message = "O atributo Tipo deve conter no mínimo 02 e no máximo 1000 caracteres")
-	private String Tipo;
+	private String tipo;
 	
 	@NotBlank(message = "O atributo descrição é Obrigatório e não pode utilizar espaços em branco!") 
 	@Size(min=5, message = "O atributo descrição deve conter no mínimo 05 caracteres")
@@ -35,19 +35,19 @@ public class Categoria {
 	private List<Produto>produto;
 
 	public long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getTipo() {
-		return Tipo;
+		return tipo;
 	}
 
 	public void setTipo(String tipo) {
-		Tipo = tipo;
+		this.tipo = tipo;
 	}
 
 	public String getDescricao() {
@@ -65,6 +65,8 @@ public class Categoria {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+
+	
 
 
 
